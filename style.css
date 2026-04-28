@@ -7,3 +7,70 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
 }
+/* 1. Genel Ayarlar */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. CV Konteyner Yapısı */
+.rounded-overflow {
+    overflow: hidden;
+    border-radius: 15px;
+    background: #fff;
+}
+
+/* 3. Sol Sidebar (Bej Bölüm) */
+.sidebar {
+    background-color: #e5ddd5; /* Görseldeki bej tonu */
+    color: #4a4a4a;
+    min-height: 100%;
+}
+
+/* 4. Sağ Başlık (Koyu Gri Bölüm) */
+header.bg-dark {
+    background-color: #343a40 !important; /* Görseldeki koyu gri */
+    padding: 3rem !important;
+}
+
+/* 5. İletişim & Bağlantılar (Yeni Eklediğimiz Kısım) */
+.contact-info a {
+    transition: all 0.3s ease;
+    display: inline-block;
+    color: #4a4a4a;
+}
+
+.contact-info a:hover {
+    color: #0d6efd !important;
+    transform: translateX(5px);
+}
+
+/* İkonların rengini ve boyutunu garantiye alalım */
+.contact-info i {
+    display: inline-block !important;
+    color: #2c3e50 !important; /* Koyu gri/lacivert tonu */
+    font-size: 1.1rem;
+    width: 25px;
+    text-align: center;
+}
+.fa-linkedin {
+    color: #0077b5 !important; /* LinkedIn mavisi */
+}
+
+/* 6. İçerik Başlıkları ve Yazılar */
+section h2 {
+    color: #343a40;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e5ddd5;
+    padding-bottom: 10px;
+    margin-top: 25px;
+}
+
+article h3 {
+    color: #0d6efd;
+    margin-top: 15px;
+}
