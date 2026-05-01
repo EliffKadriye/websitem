@@ -36,7 +36,7 @@ header.bg-dark {
     padding: 3rem !important;
 }
 
-/* 5. İletişim & Bağlantılar (Yeni Eklediğimiz Kısım) */
+/* 5. İletişim & Bağlantılar  */
 .contact-info a {
     transition: all 0.3s ease;
     display: inline-block;
@@ -73,4 +73,19 @@ section h2 {
 article h3 {
     color: #0d6efd;
     margin-top: 15px;
+}
+/* Bu kod, resmi bozmadan (en-boy oranını koruyarak) çerçeveye sığdırır */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover; /* Resmi kırparak alanı doldurur, görüntüyü basmaz */
+    object-position: center; /* Resmin tam ortasını odaklar */
+}
+/* İlgi Alanlarım sayfasındaki ana başlık için */
+.display-4.fw-bold.text-primary {
+    color: #2c3e50 !important; /* Bootstrap'in mavi rengini ezer */
+}
+
+/* Sayfa içindeki diğer alt başlıklar için (Opsiyonel) */
+h1, h2 {
+    color: #2c3e50;
 }

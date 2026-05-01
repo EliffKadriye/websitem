@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanlarım | Elif Kadriye</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Öğrenci Paneli</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ilgi.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.php">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold" style="color: #2c3e50;">İlgi Alanlarım & Hobiler</h1>
+            <p class="lead">Kişisel uğraşlarım ve OMDb API üzerinden gelen favori yapımlarım</p>
+        </header>
+
+        <h2 class="mb-4 border-bottom pb-2"><i class="fas fa-heart me-2 text-danger"></i>Nelerle Uğraşıyorum?</h2>
+       <div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 overflow-hidden hobi-kart">
+            <img src="https://images.unsplash.com/photo-1584992236310-6edddc08acff?q=80&w=400&h=250&auto=format&fit=crop" class="card-img-top" alt="Örgü Örmek">
+            <div class="card-body text-center">
+                <i class="fas fa-scissors fa-2x text-secondary mb-2"></i>
+                <h5 class="fw-bold">Örgü Örmek</h5>
+                <p class="small text-muted">Yaratıcı tasarımlar ve dinlendirici bir hobi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 overflow-hidden hobi-kart">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=400&h=250&auto=format&fit=crop" class="card-img-top" alt="Tatlı Yapmak">
+            <div class="card-body text-center">
+                <i class="fas fa-cookie-bite fa-2x text-warning mb-2"></i>
+                <h5 class="fw-bold">Tatlı Yapmak</h5>
+                <p class="small text-muted">Yeni tariflerle mutfakta zaman geçirmek.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 overflow-hidden hobi-kart">
+            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&h=250&auto=format&fit=crop" class="card-img-top" alt="Günlük Tutmak">
+            <div class="card-body text-center">
+                <i class="fas fa-pen-fancy fa-2x text-info mb-2"></i>
+                <h5 class="fw-bold">Günlük Tutmak</h5>
+                <p class="small text-muted">Düşüncelerimi kağıda dökerek notlar almak.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="mb-4 border-bottom pb-2"><i class="fas fa-tv me-2 text-primary"></i>Favori Dizi ve Filmlerim</h2>
+        <div id="film-alani" class="row g-4">
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2">Favori yapımlar API'den çekiliyor...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // OMDb API Anahtarı
+        const apiKey = "d4066026";
+        
+        // Senin istediğin dizi ve film listesi
+        const favoriYapimlar = [
+            "Gilmore Girls", 
+            "Friends", 
+            "The Vampire Diaries", 
+            "Harry Potter and the Sorcerer's Stone", 
+            "Interstellar", 
+            "Inception"
+        ];
+
+        async function verileriGetir() {
+            const filmAlani = document.getElementById('film-alani');
+            filmAlani.innerHTML = ''; // Yükleniyor yazısını temizle
+
+            for (const yapim of favoriYapimlar) {
+                try {
+                    // API isteği: Başlığa (t=...) göre arama yapar
+                    const response = await fetch(`https://www.omdbapi.com/?t=${yapim}&apikey=${apiKey}`);
+                    const data = await response.json();
+
+                    if (data.Response === "True") {
+                        // Bootstrap kart yapısını oluşturup ekrana basıyoruz
+                        const kartHtml = `
+                            <div class="col-md-4 col-lg-2 col-sm-6">
+                                <div class="card h-100 shadow-sm border-0 film-kart">
+                                    <img src="${data.Poster}" class="card-img-top" alt="${data.Title}" style="height: 280px; object-fit: cover;">
+                                    <div class="card-body p-2 text-center">
+                                        <h6 class="card-title fw-bold mb-1" style="font-size: 0.9rem;">${data.Title}</h6>
+                                        <p class="card-text text-muted mb-0" style="font-size: 0.8rem;">${data.Year} | ${data.Type.toUpperCase()}</p>
+                                        <span class="badge bg-warning text-dark mt-1">★ ${data.imdbRating}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        filmAlani.innerHTML += kartHtml;
+                    }
+                } catch (error) {
+                    console.error("Veri çekilirken bir hata oluştu:", error);
+                }
+            }
+        }
+
+        // Sayfa tamamen yüklendiğinde fonksiyonu çalıştırır
+        window.onload = verileriGetir;
+    </script>
+
+    <style>
+        .film-kart { transition: transform 0.3s ease; cursor: default; }
+        .film-kart:hover { transform: scale(1.05); }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
