@@ -85,14 +85,24 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="hobiler[]" value="Müzik"> Müzik
                         </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="hobiler[]" value="Müzik"> yazılım
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="hobiler[]" value="Müzik">bullet journal 
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="hobiler[]" value="Müzik"> kitap okumak
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="hobiler[]" value="Müzik"> yemek yapmak 
+                        </div>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label">Şehir:</label>
                         <select name="sehir" class="form-select">
                             <option value="">Seçiniz</option>
-                            <option value="Sakarya">Sakarya</option>
-                            <option value="İstanbul">İstanbul</option>
                         </select>
                     </div>
 
@@ -128,6 +138,23 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const sehirler = [
+        "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
+    ];
+
+    // Şehirleri alfabetik sırala (Opsiyonel)
+    sehirler.sort((a, b) => a.localeCompare('tr'));
+
+    const select = document.getElementById("sehirSelect");
+
+    sehirler.forEach(sehir => {
+        let option = document.createElement("option");
+        option.value = sehir;
+        option.textContent = sehir;
+        select.appendChild(option);
+    });
+});
         // 1. NATIVE JAVASCRIPT DENETİMİ
         function validateNativeJS() {
             const form = document.getElementById('contactForm');
