@@ -6,12 +6,23 @@
     <title>Şehrim | Gümüşhane</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Fotoğrafların üstüne gelince el işareti çıkması için */
+        .carousel-item a {
+            cursor: pointer;
+            display: block;
+        }
+        /* Fotoğrafların boyutunu sabitlemek ve uyumlu hale getirmek için */
+        .carousel-img {
+            height: 500px;
+            object-fit: cover;
+        }
+    </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100 bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-         
             <a class="navbar-brand" href="index.html">Öğrenci Paneli</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -20,68 +31,66 @@
                     <li class="nav-item"><a class="nav-link active" href="sehir.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link" href="ilgi.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header>
-        <div id="gumushaneSlider" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#gumushaneSlider" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#gumushaneSlider" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#gumushaneSlider" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#gumushaneSlider" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#gumushaneSlider" data-bs-slide-to="4"></button>
-            </div>
+    <main class="container my-5">
+        <div id="carouselExampleCaptions" class="carousel slide shadow rounded overflow-hidden mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
+                
                 <div class="carousel-item active">
-                    <img src="img/gumushane1.jpg" class="d-block w-100" alt="Karaca Mağarası" style="height: 500px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Karaca Mağarası</h5>
-                        <p>Damlataşı sütunları ve sarkıtlarıyla bir doğa harikası.</p>
-                    </div>
+                    <a href="https://tr.wikipedia.org/wiki/Karaca_Mağarası" target="_blank">
+                        <img src="img/karaca.jpg" class="d-block w-100 carousel-img" alt="Karaca Mağarası">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Karaca Mağarası</h5>
+                            <p>Detaylı bilgi için fotoğrafa tıklayın.</p>
+                        </div>
+                    </a>
                 </div>
+
                 <div class="carousel-item">
-                    <img src="img/gumushane2.jpg" class="d-block w-100" alt="Tomara Şelalesi" style="height: 500px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Tomara Şelalesi</h5>
-                        <p>Tertemiz sularıyla huzurun adresi.</p>
-                    </div>
+                    <a href="https://tr.wikipedia.org/wiki/Tomara_Şelalesi" target="_blank">
+                        <img src="img/tomara.jpg" class="d-block w-100 carousel-img" alt="Tomara Şelalesi">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Tomara Şelalesi</h5>
+                            <p>Detaylı bilgi için fotoğrafa tıklayın.</p>
+                        </div>
+                    </a>
                 </div>
+
                 <div class="carousel-item">
-                    <img src="img/gumushane3.jpg" class="d-block w-100" alt="Santa Harabeleri" style="height: 500px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Artebel Gölleri </h5>
-                        <p>Gümüşhane'nin çatısı niteliğinde müthiş bir doğa harikası.</p>
-                    </div>
+                    <a href="https://tr.wikipedia.org/wiki/Artabel_Gölleri_Tabiat_Parkı" target="_blank">
+                        <img src="img/artabel.jpg" class="d-block w-100 carousel-img" alt="Artabel Gölleri">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Artabel Gölleri</h5>
+                            <p>Detaylı bilgi için fotoğrafa tıklayın.</p>
+                        </div>
+                    </a>
                 </div>
+
                 <div class="carousel-item">
-                    <img src="img/gumushane4.jpg" class="d-block w-100" alt="Gümüşhane Genel" style="height: 500px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Gümüşhane Şehir Merkezi</h5>
-                        <p>Dağların arasındaki gümüş şehir. Gümüşhanem de Gümüşhanem. </p>
-                    </div>
+                    <a href="https://tr.wikipedia.org/wiki/Gümüşhane" target="_blank">
+                        <img src="img/merkez.jpg" class="d-block w-100 carousel-img" alt="Gümüşhane Şehir Merkezi">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Gümüşhane Şehir Merkezi</h5>
+                            <p>Detaylı bilgi için fotoğrafa tıklayın.</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img src="img/gumushane5.jpg" class="d-block w-100" alt="Yöresel Yemekler " style="height: 500px; object-fit: cover;">
-                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
-                        <h5>Kanzılı Börek, Siron, Pestil ve Köme, Gümüşhane Ekmeği</h5>
-                        <p> Mükemmellll yemek deneyimi </p>
-                    </div>
-                </div>
+
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#gumushaneSlider" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#gumushaneSlider" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
-    </header>
 
- <main class="container my-5">
+       <main class="container my-5">
         <section class="row">
             <div class="col-md-8">
                 <h2 class="display-6 fw-bold border-bottom pb-2 mb-4">Gümüşhane Hakkında</h2>
