@@ -29,12 +29,12 @@
                         <form id="loginForm" action="login_kontrol.php" method="POST" @submit="validateForm">
                             <div class="mb-3">
                                 <label class="form-label">Kullanıcı Adı (E-posta)</label>
-                                <input type="email" name="email" v-model="email" class="form-control" placeholder="isim.soyisim@ogr.sakarya.edu.tr">
+                                <input type="email" name="email" v-model="email" class="form-control" placeholder="b251210037@sakarya.edu.tr">
                             </div>
                             
                             <div class="mb-4">
                                 <label class="form-label">Şifre</label>
-                                <input type="password" name="password" v-model="password" class="form-control" placeholder="Öğrenci Numaranız">
+                                <input type="password" name="password" v-model="password" class="form-control" placeholder="Elif.10115346696">
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
@@ -69,7 +69,10 @@
                         return;
                     }
                     // Basit mail format kontrolü 
-                   
+                    if (!this.email.includes('@sakarya.edu.tr')) {
+                        this.errorMsg = "Lütfen geçerli bir Sakarya e-posta adresi giriniz.";
+                        e.preventDefault();
+                    }
                 }
             }
         }).mount('#app');
