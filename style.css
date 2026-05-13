@@ -89,3 +89,36 @@ article h3 {
 h1, h2 {
     color: #2c3e50;
 }
+/* Şehrim sayfası Carousel (Atlıkarınca) Stilleri */
+.carousel-item a {
+    cursor: pointer;
+    display: block;
+}
+
+/* Fotoğrafların boyutunu sabitlemek ve uyumlu hale getirmek için */
+.carousel-img {
+    height: 500px;
+    object-fit: cover;
+}
+/* Mobil hamburger menü - zorla görünür */
+.navbar-toggler {
+    display: block !important;
+    border: 2px solid rgba(255,255,255,0.6) !important;
+    padding: 6px 10px !important;
+    border-radius: 4px !important;
+}
+
+.navbar-toggler-icon {
+    display: inline-block !important;
+    width: 1.5em !important;
+    height: 1.5em !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255%2c255%2c255%2c0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+}

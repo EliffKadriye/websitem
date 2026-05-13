@@ -10,9 +10,22 @@
 </head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Öğrenci Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgi.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2" href="login.html">Giriş</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -34,7 +47,7 @@
                             
                             <div class="mb-4">
                                 <label class="form-label">Şifre</label>
-                                <input type="password" name="password" v-model="password" class="form-control" placeholder="Elif.10115346696">
+                                <input type="password" name="password" v-model="password" class="form-control" placeholder="b251210037">
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>

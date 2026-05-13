@@ -7,7 +7,7 @@ $password = $_POST['password'] ?? '';
 $userNo = explode('@', $email)[0];
 
 // Ödev kuralı: Şifre öğrenci numarası olmalı, kullanıcı adı tam mail olmalı 
-if ($email == "b251210037@sakarya.edu.tr" && $password == "Elif.10115346696") {
+if ($email == "b251210037@sakarya.edu.tr" && $password == "b251210037") {
     // Başarılı giriş mesajı 
     echo "<div style='text-align:center; margin-top:50px; font-family:sans-serif;'>
             <h1>Hoşgeldiniz " . htmlspecialchars($userNo) . "</h1>
